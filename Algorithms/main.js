@@ -286,30 +286,22 @@ console.log(ms.getMin())    //19
 
 class DuoQueue {
 constructor(){
-this.queues=[[],[]]
+this.Queues=[[],[]]
 
 }
 enqueue(person, qNum){
-  this.queues[qNum][this.queues[qNum].length]=person
+  this.Queues[qNum-1][ this.Queues[qNum-1].length]=person
 
 }
 dequeue(qNum){
-
-  this.queues[qNum].splice(0,1)
+  this.Queues[qNum-1].splice(0,1)
+  
 }
 getLongestQueue( ){
-if(this.q1.length<this.q2.length){
-  return this.q2
-}else{
-  return this.q1
-}
+
 }
 getShortestQueue( ){
-  if(this.q1.length>this.q2.length){
-    return this.q2
-  }else{
-    return this.q1
-  }
+ 
 }
 balanceQueues( ){
 
