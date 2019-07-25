@@ -15,6 +15,15 @@ $('body').on('click','button',function(){
      game.loud()
     r.renderBoard(game.matrix)
     r.renderScores(game.players)
+    let boxs=$('.box')
+    for (let b of boxs){
+        if (b.innerHTML==='x'){
+           $(b).css('color','red')
+        }
+        if (b.innerHTML==='c'){
+            $(b).css('color','yellow')
+         }
+    }
 })
 
 
@@ -52,9 +61,20 @@ if (e.which == 108) {
     game.movePlayer(2, "down")
    
 }
-  game.loud()
   r.renderBoard(game.matrix)
 r.renderScores(game.players)
+let boxs=$('.box')
+for (let b of boxs){
+    if (b.innerHTML==='x'){
+       $(b).css('color','red')
+    }
+    if (b.innerHTML==='c'){
+        $(b).css('color','yellow')
+     }
+}
+if(game.victory!==false){
+    $('#score').append(`<h1>${game.victory}</h1>`)
+}
 
 })
 
